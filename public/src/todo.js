@@ -11,7 +11,7 @@ export function toDoList(parentElement) {
                                 `+ e.todo +`
                             </td>
                             <td class="px-6 py-4">
-                                <button type="button" class="editButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Edit</button>
+                                <button type="button" class="completeButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Complete</button>
                             </td>
                             <td class="px-6 py-4">
                                 <button type="button" class="deleteButton text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
@@ -23,7 +23,7 @@ export function toDoList(parentElement) {
                                 `+ e.todo +`
                             </td>
                             <td class="px-6 py-4">
-                                <button type="button" class="editButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Edit</button>
+                                <button type="button" class="completeButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Complete</button>
                             </td>
                             <td class="px-6 py-4">
                                 <button type="button" class="deleteButton text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
@@ -32,7 +32,7 @@ export function toDoList(parentElement) {
             })
             parentElement.innerHTML = html;
 
-            document.querySelectorAll(".editButton").forEach((button) => {
+            document.querySelectorAll(".completeButton").forEach((button) => {
                 button.onclick = () => {
 
                 };
