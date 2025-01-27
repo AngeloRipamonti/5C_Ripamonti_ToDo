@@ -2,13 +2,13 @@ export function toDoList(parentElement) {
     let todos = [];
 
     return {
-        render: function () {
+        render: function () {7
             let html = ``;
             html += todos.map((e) => {
                 if(!e.completed)
                     return `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="px-6 py-4">
-                                `+ e.todo +`
+                                `+ e.name +`
                             </td>
                             <td class="px-6 py-4">
                                 <button type="button" class="completeButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Complete</button>
@@ -18,9 +18,9 @@ export function toDoList(parentElement) {
                             </td>
                         </tr>`;
                 else
-                return `<tr class="bg-gray-400 border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                return `<tr class="bg-gray-400 border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-800 hover:text-white dark:hover:bg-gray-600">
                             <td class="px-6 py-4">
-                                `+ e.todo +`
+                                `+ e.name +`
                             </td>
                             <td class="px-6 py-4">
                                 <button type="button" class="completeButton text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Complete</button>
@@ -32,15 +32,15 @@ export function toDoList(parentElement) {
             })
             parentElement.innerHTML = html;
 
-            document.querySelectorAll(".completeButton").forEach((button) => {
+            document.querySelectorAll(".completeButton").forEach((button, index) => {
                 button.onclick = () => {
-
+                    this.complete(todos[index]).then(() => this.load()).catch(console.error);
                 };
             });
 
-            document.querySelectorAll(".deleteButton").forEach((button) => {
+            document.querySelectorAll(".deleteButton").forEach((button, index) => {
                 button.onclick = () => {
-
+                    this.delete(todos[index].id).then(() => this.load()).catch(console.error);
                 };
             });
         },

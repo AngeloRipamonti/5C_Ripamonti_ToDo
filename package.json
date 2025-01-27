@@ -2,10 +2,10 @@
   "name": "todolist",
   "version": "1.0.0",
   "description": "© Copyright 2024 by Angelo Ripamonti - All rights reserved.",
-  "main": "service/index.js",
+  "main": "./index.js",
   "scripts": {
-    "start": "node private/index.js",
-    "build": "tailwindcss -i ./assets/css/input.css -o ./dist/assets/css/output.css --watch",
+    "start": "node ./index.js",
+    "build": "tailwindcss -i ./public/assets/css/input.css -o ./public/dist/assets/css/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

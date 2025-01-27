@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 let http = require("http");
 const path = require('path');
 const app = express();
-const todos = [];
+let todos = [];
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,12 +19,6 @@ app.post("/todo/add", (req, res) => {
 
 app.get("/todo", (req, res) => {
    res.json({ todos: todos });
-});
-
-const server = http.createServer(app);
-
-server.listen(80, () => {
-   console.log("- server running");
 });
 
 app.put("/todo/complete", (req, res) => {
@@ -46,3 +40,10 @@ app.delete("/todo/:id", (req, res) => {
    todos = todos.filter((element) => element.id !== req.params.id);
    res.json({ result: "Ok" });
 })
+
+const server = http.createServer(app);
+
+server.listen(80, () => {
+   console.log(server.address());
+   console.log("- server running");
+});
