@@ -1,0 +1,1 @@
+© Copyright 2024 by Angelo Ripamonti - All rights reserved.
