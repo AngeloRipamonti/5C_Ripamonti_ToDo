@@ -6,7 +6,7 @@ export function toDoList(parentElement) {
             let html = ``;
             html += todos.map((e) => {
                 if(!e.completed)
-                    return `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    return `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-blue-100 dark:hover:bg-gray-600">
                             <td class="px-6 py-4">
                                 `+ e.name +`
                             </td>
@@ -18,7 +18,7 @@ export function toDoList(parentElement) {
                             </td>
                         </tr>`;
                 else
-                return `<tr class="bg-gray-400 border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-800 hover:text-white dark:hover:bg-gray-600">
+                return `<tr class="bg-yellow-100 border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-yellow-300 dark:hover:bg-gray-600">
                             <td class="px-6 py-4">
                                 `+ e.name +`
                             </td>
