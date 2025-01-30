@@ -12,6 +12,7 @@ setInterval(async () => {
 }, 30000);
 
 insertButton.onclick = async () => {
+    if(!todoInput.value || todoInput.value === "" || !todoInput.value.trim()) return;
     const task = {
         name: todoInput.value,
         completed: false
