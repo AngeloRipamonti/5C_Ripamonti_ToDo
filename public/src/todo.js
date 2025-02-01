@@ -2,7 +2,7 @@ export function toDoList(parentElement) {
     let todos = [];
 
     return {
-        render: function () {7
+        render: function () {
             let html = ``;
             html += todos.map((e) => {
                 if(!e.completed)
